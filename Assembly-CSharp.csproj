@@ -52,6 +52,7 @@
      <Compile Include="Assets\Tdc.cs" />
      <Compile Include="Assets\Ultra.cs" />
      <Compile Include="Assets\WarPeriod.cs" />
+     <Compile Include="Assets\sub.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
