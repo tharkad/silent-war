@@ -200,6 +200,70 @@ public class Grid : MonoBehaviour
         cups[10, 0, 4] = 2;
         cups[10, 1, 4] = 29;
 
+        // TDC Tokens
+
+        // -3
+        cups[11, 0, 0] = 1;
+        cups[11, 1, 0] = 2;
+        cups[11, 0, 1] = 1;
+        cups[11, 1, 1] = 2;
+
+        // -2
+        cups[11, 0, 2] = 1;
+        cups[11, 1, 2] = 3;
+        cups[11, 0, 3] = 1;
+        cups[11, 1, 3] = 3;
+        cups[11, 0, 4] = 1;
+        cups[11, 1, 4] = 3;
+        cups[11, 0, 5] = 1;
+        cups[11, 1, 5] = 3;
+
+        // -1
+        cups[11, 0, 6] = 1;
+        cups[11, 1, 6] = 4;
+        cups[11, 0, 7] = 1;
+        cups[11, 1, 7] = 4;
+        cups[11, 0, 8] = 1;
+        cups[11, 1, 8] = 4;
+        cups[11, 0, 9] = 1;
+        cups[11, 1, 9] = 4;
+
+        // 0
+        cups[11, 0, 10] = 1;
+        cups[11, 1, 10] = 5;
+        cups[11, 0, 11] = 1;
+        cups[11, 1, 11] = 5;
+        cups[11, 0, 12] = 1;
+        cups[11, 1, 12] = 5;
+        cups[11, 0, 13] = 1;
+        cups[11, 1, 13] = 5;
+
+        // +1
+        cups[11, 0, 14] = 1;
+        cups[11, 1, 14] = 6;
+        cups[11, 0, 15] = 1;
+        cups[11, 1, 15] = 6;
+        cups[11, 0, 16] = 1;
+        cups[11, 1, 16] = 6;
+        cups[11, 0, 17] = 1;
+        cups[11, 1, 17] = 6;
+
+        // +2
+        cups[11, 0, 18] = 1;
+        cups[11, 1, 18] = 7;
+        cups[11, 0, 19] = 1;
+        cups[11, 1, 19] = 7;
+        cups[11, 0, 20] = 1;
+        cups[11, 1, 20] = 7;
+        cups[11, 0, 21] = 1;
+        cups[11, 1, 21] = 7;
+
+        // -3
+        cups[11, 0, 22] = 1;
+        cups[11, 1, 22] = 8;
+        cups[11, 0, 23] = 1;
+        cups[11, 1, 23] = 8;
+
         if (warPeriod == 1)
         {
             // Cup A
@@ -674,7 +738,7 @@ public class Grid : MonoBehaviour
             pullFromCupAndStore(7, cups, 4, 3, 17);
         }
         else if (warPeriod == 4)
-        { // [][] BAD
+        {
           // Cup A
 
             // Combat Event
@@ -685,17 +749,24 @@ public class Grid : MonoBehaviour
             cups[0, 0, 1] = 2;
             cups[0, 1, 1] = 3;
 
+            // CL5ts
+            cups[0, 0, 2] = 2;
+            cups[0, 1, 2] = 21;
+
             // DD2t's
-            pullFromCupAndStore(4, cups, 2, 0, 2);
+            pullFromCupAndStore(4, cups, 1, 0, 3);
 
             // DD1t
             pullFromCupAndStore(5, cups, 2, 0, 4);
 
+            // DE1t
+            pullFromCupAndStore(10, cups, 1, 0, 6);
+
             // M7+t
-            pullFromCupAndStore(6, cups, 1, 0, 6);
+            pullFromCupAndStore(6, cups, 1, 0, 7);
 
             // M6-t's
-            pullFromCupAndStore(7, cups, 16, 0, 7);
+            pullFromCupAndStore(7, cups, 10, 0, 8);
 
             // Cup B
 
@@ -711,21 +782,29 @@ public class Grid : MonoBehaviour
             cups[1, 0, 2] = 2;
             cups[1, 1, 2] = 4;
 
-            // Izumo
+            // CL5ts
             cups[1, 0, 3] = 2;
-            cups[1, 1, 3] = 18;
+            cups[1, 1, 3] = 21;
+            cups[1, 0, 4] = 2;
+            cups[1, 1, 4] = 21;
 
             // DD2t's
-            pullFromCupAndStore(4, cups, 6, 1, 4);
+            pullFromCupAndStore(4, cups, 2, 1, 5);
 
             // DD1t
-            pullFromCupAndStore(5, cups, 1, 1, 10);
+            pullFromCupAndStore(5, cups, 1, 1, 7);
+
+            // DE1t
+            pullFromCupAndStore(10, cups, 2, 1, 8);
+
+            // Dilligent DD
+            pullFromCupAndStore(9, cups, 1, 1, 10);
 
             // M7+t
             pullFromCupAndStore(6, cups, 3, 1, 11);
 
             // M6-t's
-            pullFromCupAndStore(7, cups, 10, 1, 14);
+            pullFromCupAndStore(7, cups, 8, 1, 14);
 
             // Cup C
 
@@ -733,40 +812,36 @@ public class Grid : MonoBehaviour
             cups[2, 0, 0] = 1;
             cups[2, 1, 0] = 1;
 
+            // CV15t's
+            pullFromCupAndStore(8, cups, 1, 2, 1);
+
             // BB32t's
-            cups[2, 0, 1] = 2;
-            cups[2, 1, 1] = 11;
-
-            // Asahi
             cups[2, 0, 2] = 2;
-            cups[2, 1, 2] = 17;
-
-            // CA9t
-            cups[2, 0, 3] = 2;
-            cups[2, 1, 3] = 20;
+            cups[2, 1, 2] = 11;
 
             // CL5ts
+            cups[2, 0, 3] = 2;
+            cups[2, 1, 3] = 21;
             cups[2, 0, 4] = 2;
             cups[2, 1, 4] = 21;
-            cups[2, 0, 5] = 2;
-            cups[2, 1, 5] = 21;
-            cups[2, 0, 6] = 2;
-            cups[2, 1, 6] = 21;
 
             // DD2t's
-            pullFromCupAndStore(4, cups, 6, 2, 7);
+            pullFromCupAndStore(4, cups, 3, 2, 5);
 
             // DD1t
-            pullFromCupAndStore(5, cups, 1, 2, 13);
+            pullFromCupAndStore(5, cups, 1, 2, 8);
+
+            // DE1t
+            pullFromCupAndStore(10, cups, 2, 2, 9);
 
             // Dilligent DD
-            pullFromCupAndStore(9, cups, 1, 3, 14);
+            pullFromCupAndStore(9, cups, 1, 2, 11);
 
             // M7+t
-            pullFromCupAndStore(6, cups, 4, 2, 15);
+            pullFromCupAndStore(6, cups, 4, 3, 12);
 
             // M6-t's
-            pullFromCupAndStore(7, cups, 6, 2, 19);
+            pullFromCupAndStore(7, cups, 7, 2, 15);
 
             // Cup D
 
@@ -775,59 +850,55 @@ public class Grid : MonoBehaviour
             cups[3, 1, 0] = 1;
 
             // CV15t's
-            pullFromCupAndStore(8, cups, 2, 3, 1);
+            pullFromCupAndStore(8, cups, 1, 3, 1);
 
             // Shokaku
-            cups[3, 0, 3] = 2;
-            cups[3, 1, 3] = 8;
+            cups[3, 0, 2] = 2;
+            cups[3, 1, 2] = 8;
 
-            // BB32t's
+            // Taiho
+            cups[3, 0, 3] = 2;
+            cups[3, 1, 3] = 9;
+
+            // Shinano
             cups[3, 0, 4] = 2;
-            cups[3, 1, 4] = 11;
+            cups[3, 1, 4] = 10;
 
             // BB40t
             cups[3, 0, 5] = 2;
             cups[3, 1, 5] = 12;
 
-            // BB36t
+            // BV36t
             cups[3, 0, 6] = 2;
-            cups[3, 1, 6] = 13;
-
-            // BB35t
-            cups[3, 0, 7] = 2;
-            cups[3, 1, 7] = 15;
+            cups[3, 1, 6] = 14;
 
             // Yamato
-            cups[3, 0, 8] = 2;
-            cups[3, 1, 8] = 16;
+            cups[3, 0, 7] = 2;
+            cups[3, 1, 7] = 16;
 
             // CA15t
-            cups[3, 0, 9] = 2;
-            cups[3, 1, 9] = 19;
+            cups[3, 0, 8] = 2;
+            cups[3, 1, 8] = 19;
 
             // CA9t
-            cups[3, 0, 10] = 2;
-            cups[3, 1, 10] = 20;
+            cups[3, 0, 9] = 2;
+            cups[3, 1, 9] = 20;
 
             // CL5ts
-            cups[3, 0, 11] = 2;
-            cups[3, 1, 11] = 21;
-            cups[3, 0, 12] = 2;
-            cups[3, 1, 12] = 21;
-            cups[3, 0, 13] = 2;
-            cups[3, 1, 13] = 21;
+            cups[3, 0, 10] = 2;
+            cups[3, 1, 10] = 21;
 
             // DD2t's
-            pullFromCupAndStore(4, cups, 6, 3, 14);
+            pullFromCupAndStore(4, cups, 2, 3, 11);
 
             // Dilligent DD
-            pullFromCupAndStore(9, cups, 1, 3, 20);
+            pullFromCupAndStore(9, cups, 1, 3, 13);
 
             // M7+t
-            pullFromCupAndStore(6, cups, 2, 3, 21);
+            pullFromCupAndStore(6, cups, 2, 3, 14);
 
             // M6-t's
-            pullFromCupAndStore(7, cups, 3, 3, 23);
+            pullFromCupAndStore(7, cups, 1, 3, 16);
         }
     }
 
@@ -919,6 +990,8 @@ public class Grid : MonoBehaviour
                 targetFrontIndices[i, j] = 0;
                 if (targets[i, j])
                     targets[i, j].front = false;
+                tdcTextureIndices[i, j] = 0;
+                tdcRolledIndices[i, j] = 0;
             }
         }
     }
@@ -939,11 +1012,21 @@ public class Grid : MonoBehaviour
             // 7 = M6-t's
             // 8 = CV15t's
             // 9 = Dilligent DD
-            int[,,] cups = new int[11, 2, 35];
+            // 10 = DE1t's
+            // 11 = TDC Tokens
+            int[,,] cups = new int[12, 2, 35];
 
             fillCups(cups);
             setupColumns();
             resetBoard();
+
+            for (int i = 0; i < w; i++)
+            {
+                for (int j = 0; j < h; j++)
+                {
+                    tdcTextureIndices[i, j] = 0;
+                }
+            }
 
             // pull targets from cups
             for (int i = 0; i < w; i++)
@@ -955,45 +1038,14 @@ public class Grid : MonoBehaviour
                     targetFrontIndices[i, j] = cups[i, 1, cupTargetIndex];
                     cups[i, 0, cupTargetIndex] = 0;
                     cups[i, 1, cupTargetIndex] = 0;
+
+                    cupTargetIndex = pullFromCup(11, cups);
+                    tdcTextureIndices[i, j] = 0;
+                    tdcRolledIndices[i, j] = cups[11, 1, cupTargetIndex];
+                    cups[11, 0, cupTargetIndex] = 0;
+                    cups[11, 1, cupTargetIndex] = 0;
                 }
             }
-
-            tdcTextureIndices[0, 0] = 1;
-            tdcTextureIndices[0, 1] = 1;
-            tdcTextureIndices[0, 2] = 1;
-            tdcTextureIndices[0, 3] = 1;
-            tdcTextureIndices[1, 0] = 1;
-            tdcTextureIndices[1, 1] = 1;
-            tdcTextureIndices[1, 2] = 1;
-            tdcTextureIndices[1, 3] = 0;
-
-            tdcRolledIndices[0, 0] = 2;
-            tdcRolledIndices[0, 1] = 5;
-            tdcRolledIndices[0, 2] = 3;
-            tdcRolledIndices[0, 3] = 4;
-            tdcRolledIndices[1, 0] = 8;
-            tdcRolledIndices[1, 1] = 6;
-            tdcRolledIndices[1, 2] = 7;
-            tdcRolledIndices[1, 3] = 0;
-            /*
-                        targetBackIndices[0,0] = 1;
-                        targetBackIndices[0,1] = 1;
-                        targetBackIndices[0,2] = 2;
-                        targetBackIndices[0,3] = 1;
-                        targetBackIndices[1,0] = 2;
-                        targetBackIndices[1,1] = 2;
-                        targetBackIndices[1,2] = 1;
-                        targetBackIndices[1,3] = 0;
-
-                        targetFrontIndices[0,0] = 1;
-                        targetFrontIndices[0,1] = 1;
-                        targetFrontIndices[0,2] = 1;
-                        targetFrontIndices[0,3] = 1;
-                        targetFrontIndices[1,0] = 1;
-                        targetFrontIndices[1,1] = 1;
-                        targetFrontIndices[1,2] = 1;
-                        targetFrontIndices[1,3] = 0; 
-                        */
 
             for (int i = 0; i < w; i++)
             {
@@ -1065,9 +1117,27 @@ public class Grid : MonoBehaviour
         if (coords[0] == -1 || coords[1] == -1)
             return 0;
 
-        if (tdcTextureIndices[coords[0], coords[1]] == 1)
-            tdcTextureIndices[coords[0], coords[1]] = tdcRolledIndices[coords[0], coords[1]];
-        else if (tdcTextureIndices[coords[0], coords[1]] > 0)
+        if (tdcRolledIndices[coords[0], coords[1]] > 0)
+        {
+            if (tdcTextureIndices[coords[0], coords[1]] == 0)
+                tdcTextureIndices[coords[0], coords[1]] = 1;
+            else if (tdcTextureIndices[coords[0], coords[1]] == 1)
+                tdcTextureIndices[coords[0], coords[1]] = tdcRolledIndices[coords[0], coords[1]];
+            else if (tdcTextureIndices[coords[0], coords[1]] > 0)
+                tdcTextureIndices[coords[0], coords[1]] = 1;
+            return tdcTextureIndices[coords[0], coords[1]];
+        }
+        else
+            return 0;
+    }
+
+    public static int tdcShowTexture(Tdc tdc)
+    {
+        int[] coords = tdcGridCoordinates(tdc);
+        if (coords[0] == -1 || coords[1] == -1)
+            return 0;
+
+        if ((tdcTextureIndices[coords[0], coords[1]] == 0) && (tdcRolledIndices[coords[0], coords[1]] > 0))
             tdcTextureIndices[coords[0], coords[1]] = 1;
         return tdcTextureIndices[coords[0], coords[1]];
     }
@@ -1208,7 +1278,10 @@ public class Grid : MonoBehaviour
             for (int j = 0; j < h; j++)
             {
                 if (targets[i, j])
+                {
                     targets[i, j].loadTexture();
+                    tdcs[i, j].loadTexture();
+                }
             }
         }
         changeSearch();
