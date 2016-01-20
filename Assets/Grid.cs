@@ -10,6 +10,7 @@ public class Grid : MonoBehaviour
     public static Search[,] searches = new Search[4, 3];
     public static Ultra ultra;
     public static ResetTargets resetTargetsButton;
+    public static ResetTdcs resetTdcsButton;
     public static WarPeriod[] warPeriods = new WarPeriod[4];
     public static int[,] tdcTextureIndices = new int[w, h];
     public static int[,] tdcRolledIndices = new int[w, h];
@@ -1058,7 +1059,6 @@ public class Grid : MonoBehaviour
 
             targetsRolled = true;
             Grid.resetTargetsButton.GetComponent<SpriteRenderer>().sprite = Grid.resetTargetsButton.textures[1];
-
         }
     }
 
@@ -1119,6 +1119,7 @@ public class Grid : MonoBehaviour
 
         if (tdcRolledIndices[coords[0], coords[1]] > 0)
         {
+            Grid.resetTdcsButton.GetComponent<SpriteRenderer>().sprite = Grid.resetTdcsButton.textures[1];
             if (tdcTextureIndices[coords[0], coords[1]] == 0)
                 tdcTextureIndices[coords[0], coords[1]] = 1;
             else if (tdcTextureIndices[coords[0], coords[1]] == 1)
@@ -1138,7 +1139,10 @@ public class Grid : MonoBehaviour
             return 0;
 
         if ((tdcTextureIndices[coords[0], coords[1]] == 0) && (tdcRolledIndices[coords[0], coords[1]] > 0))
+        {
             tdcTextureIndices[coords[0], coords[1]] = 1;
+            Grid.resetTdcsButton.GetComponent<SpriteRenderer>().sprite = Grid.resetTdcsButton.textures[1];
+        }
         return tdcTextureIndices[coords[0], coords[1]];
     }
 
@@ -1287,5 +1291,36 @@ public class Grid : MonoBehaviour
         changeSearch();
 
         targetsRolled = false;
+    }
+
+    public static void resetTdcs()
+    {
+        int[,,] cups = new int[12, 2, 35];
+
+        fillCups(cups);
+        for (int i = 0; i < w; i++)
+        {
+            for (int j = 0; j < h; j++)
+            {
+                tdcTextureIndices[i, j] = 0;
+            }
+        }
+
+        // pull targets from cups
+        for (int i = 0; i < w; i++)
+        {
+            for (int j = 0; j < targetsPerColumn[i]; j++)
+            {
+                int cupTargetIndex = pullFromCup(11, cups);
+                tdcTextureIndices[i, j] = 0;
+                tdcRolledIndices[i, j] = cups[11, 1, cupTargetIndex];
+                cups[11, 0, cupTargetIndex] = 0;
+                cups[11, 1, cupTargetIndex] = 0;
+
+                tdcs[i, j].loadTexture();
+            }
+        }
+
+        Grid.resetTdcsButton.GetComponent<SpriteRenderer>().sprite = Grid.resetTdcsButton.textures[0];
     }
 }
