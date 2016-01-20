@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Grid.cs" />
+     <Compile Include="Assets\ResetTargets.cs" />
      <Compile Include="Assets\Search.cs" />
      <Compile Include="Assets\Target.cs" />
      <Compile Include="Assets\Tdc.cs" />

@@ -12,12 +12,15 @@ public class Ultra : MonoBehaviour {
 	
 	void OnMouseOver() {
 		if (Input.GetMouseButtonDown (0)) {
-			on = (!on);
-			if (on)
-				GetComponent<SpriteRenderer> ().sprite = textures[1];
-			else
-				GetComponent<SpriteRenderer> ().sprite = textures[0];
-			Grid.changeUltra();
+            if (!Grid.targetsRolled)
+            {
+                on = (!on);
+                if (on)
+                    GetComponent<SpriteRenderer>().sprite = textures[1];
+                else
+                    GetComponent<SpriteRenderer>().sprite = textures[0];
+                Grid.changeUltra();
+            }
 		}
 	}
 }

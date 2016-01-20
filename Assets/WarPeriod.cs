@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+﻿ using UnityEngine;
 using System.Collections;
 
 public class WarPeriod : MonoBehaviour {
@@ -22,7 +22,9 @@ public class WarPeriod : MonoBehaviour {
 
 	void OnMouseOver() {
 		if (Input.GetMouseButtonDown (0)) {
-			Grid.changeWarPeriod(this);
+            if (!Grid.targetsRolled) {
+                Grid.changeWarPeriod(this);
+            }
 		}
 	}
 

@@ -51,8 +51,11 @@ public class Search : MonoBehaviour {
 
 	void OnMouseOver() {
 		if (Input.GetMouseButtonDown (0)) {
-			if (!active)
-				Grid.changeSearch (this);
+            if (!Grid.targetsRolled)
+            {
+                if (!active)
+                    Grid.changeSearch(this);
+            }
 		}
 	}
 
