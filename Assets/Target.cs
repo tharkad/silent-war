@@ -6,6 +6,8 @@ public class Target : MonoBehaviour {
 	public Sprite[] backTextures;
 	public Sprite[] frontTextures;
 	public bool front = false;
+    public float catchTime = 0.25f;
+    private float timeLastClicked;
 	
 	// Use this for initialization
 	void Start () {
@@ -78,5 +80,13 @@ public class Target : MonoBehaviour {
 				GetComponent<SpriteRenderer> ().sprite = backTextures[Grid.targetCurrentTexture (this)];
 
 		}
+        else if (Input.GetMouseButtonDown (0))
+        {
+            if (Time.time - timeLastClicked < catchTime)
+            {
+                Grid.replaceTarget(this);
+            }
+            timeLastClicked = Time.time;
+        }
 	}
 }

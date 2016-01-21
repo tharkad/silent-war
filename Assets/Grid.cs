@@ -1158,6 +1158,45 @@ public class Grid : MonoBehaviour
             return targetBackIndices[coords[0], coords[1]];
     }
 
+    public static void replaceTarget(Target target)
+    {
+        int[] coords = targetGridCoordinates(target);
+
+        if (targetFrontIndices[coords[0], coords[1]] <= 0)
+        {
+            Debug.Log("Double-Clicked on empty target.");
+            return;
+        }
+
+        int[,,] cups = new int[12, 2, 35];
+
+        fillCups(cups);
+
+        for (int j = 0; j < h; j++)
+        {
+            if (targetFrontIndices[coords[0], j] > 0)
+            {
+                Debug.Log("TARGET INDEX: " + targetFrontIndices[coords[0], j]);
+                for (int n = 0; n < cups.GetLength(2); n++)
+                {
+                    Debug.Log("Index " + cups[coords[0], 1, n] + " at cup location " + n);
+                    if (cups[coords[0], 1, n] == targetFrontIndices[coords[0], j])
+                    {
+                        Debug.Log("Removing target in cup " + coords[0] + " with Index " + targetFrontIndices[coords[0], j] + " at loop " + n);
+                        cups[coords[0], 0, n] = 0;
+                        cups[coords[0], 1, n] = 0;
+                        break;
+                    }
+                }
+            }
+        }
+
+        int cupTargetIndex = pullFromCup(coords[0], cups);
+        targetBackIndices[coords[0], coords[1]] = cups[coords[0], 0, cupTargetIndex];
+        targetFrontIndices[coords[0], coords[1]] = cups[coords[0], 1, cupTargetIndex];
+        targets[coords[0], coords[1]].loadTexture();
+    }
+
     public static void convoySearch()
     {
         int ultraBonus = 0;
